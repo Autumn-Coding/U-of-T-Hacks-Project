@@ -1,6 +1,16 @@
 body {
-    background: grey;
-    height: 2000px;
+    height: 2500px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background: #70bg32;
+    background-repeat:no-repeat;
+    background: -webkit-linear-gradient(#ff8080, #ffcccc);
+    background: -moz-linear-gradient(#ff8080, #ffcccc);
+    background: -ms-linear-gradient(#ff8080, #ffcccc);
+    background: -o-linear-gradient(#ff8080, #ffcccc);
+    background: linear-gradient(#ff8080, #bfff80 1500px, #80bfff 2900px);
 }
 
 #topHeader {
@@ -28,10 +38,19 @@ body {
     color: blue;
 }
 
-#emptyspace {
-    top: 200px;
+#theProgram {
+    top: 800px;
+    padding-top: 80px;
     position: absolute;
-    height: 2000px;
+    height: 1000px;
+}
+
+
+#credits {
+    top: 1800px;
+    padding-top: 80px;
+    position: absolute;
+    height: 500px;
 }
 
 
