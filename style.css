@@ -1,5 +1,6 @@
 body {
     background: grey;
+    height: 2000px;
 }
 
 #navigation {
@@ -19,6 +20,11 @@ body {
          -o-animation: fadein 2s; /* Opera < 12.1 */
             animation: fadein 2s;
 }
+
+#emptyspace {
+    height: 2000px;
+}
+
 
 @keyframes fadein {
     from { opacity: 0; }
