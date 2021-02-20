@@ -1,10 +1,11 @@
 var navigation = document.getElementById("navigation");
 var topHeader = document.getElementById("topHeader");
 var uploadedImage = document.getElementById("uploadedImage");
+var submitFile = document.getElementById("submitFile");
 
 
 window.onscroll = function(){
-    if(document.body.scrollTop > 70 || document.documentElement.scrollTop > 70){
+    if(document.body.scrollTop > topHeader.clientHeight || document.documentElement.scrollTop > topHeader.clientHeight){
         navigation.classList.remove("pleaseStay");
         navigation.classList.add("scrollWithMe");
     } else{
@@ -14,9 +15,23 @@ window.onscroll = function(){
 }
 
 
-function handleFileSelect(element) {
-    const thisImage = this.files[0];
+var formData;
+
+function collectThisImage() {
+    let thisImage = this.files[0];
+    formData = new FormData();
+    formData.append('file', thisImage);
 }
 
+function sendImage() {
+    if (formData != undefined) {
+       let xhr = new XMLHttpRequest();
+        xhr.open('POST', "/upload", true);
+        xhr.send(formData);
+    } else {
+        alert("no image selected")
+    }
+}
 
-uploadedImage.addEventListener("change", handleFileSelect, false);
+uploadedImage.addEventListener("change", collectThisImage, false);
+submitFile.addEventListener("click", sendImage)
