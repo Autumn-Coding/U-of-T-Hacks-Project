@@ -1,16 +1,5 @@
 body {
-    height: 2500px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    background: #70bg32;
-    background-repeat:no-repeat;
-    background: -webkit-linear-gradient(#ff8080, #ffcccc);
-    background: -moz-linear-gradient(#ff8080, #ffcccc);
-    background: -ms-linear-gradient(#ff8080, #ffcccc);
-    background: -o-linear-gradient(#ff8080, #ffcccc);
-    background: linear-gradient(#ff8080, #bfff80 1500px, #80bfff 2900px);
+    background-color: #ff9999;
 }
 
 #topHeader {
@@ -18,13 +7,11 @@ body {
     width: 100%;
     background: white;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0px;
 }
 
 #navigation {
     background: white;
-    left: 0;
     height: 50px;
     width: 100%;
 }
@@ -40,19 +27,33 @@ body {
 
 #theProgram {
     top: 800px;
-    padding-top: 80px;
-    position: absolute;
-    height: 1000px;
 }
-
 
 #credits {
     top: 1800px;
-    padding-top: 80px;
-    position: absolute;
-    height: 500px;
 }
 
+#About {
+    top: 100px;
+}
+
+
+
+.bodyHeader {
+    height: 100px;
+    width: 100%;
+    background-image : linear-gradient(to right,
+    rgba(255,255,255, 0), 
+    rgba(255,255,255, 1),
+    rgba(255,255,255, 0));
+}
+
+.bodyBox {
+    position: absolute;
+    padding-top: 80px;
+    height: 1000px;
+    width: 100%;
+}
 
 .topBar {
     display: flex;
@@ -60,6 +61,7 @@ body {
     justify-content: space-around;
     align-items: center;
     z-index: 10;
+    margin: 0;
 }
 
 .pleaseStay {
