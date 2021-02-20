@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def homepage():
+def page():
     # Create a Cloud Firestore client.
     firestore_client = firestore.Client()
 
@@ -21,16 +21,17 @@ def homepage():
     photo_documents = list(firestore_client.collection(u'photos').get())
 
     # Return a Jinja2 HTML template.
-    return render_template('homepage.html', photo_documents=photo_documents)
+    return render_template('page.html', photo_documents=photo_documents)
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_photo():
     # Create a Cloud Storage client.
+    print("Posted file: {}".format(request.files['file']))
     storage_client = storage.Client()
 
     # Get the Cloud Storage bucket that the file will be uploaded to.
     bucket = storage_client.get_bucket(os.environ.get('CLOUD_STORAGE_BUCKET'))
-    print("Posted file: {}".format(request.files['file']))
+    
     # Create a new blob and upload the file's content to Cloud Storage.
     photo = request.files['file']
     blob = bucket.blob(photo.filename)
@@ -74,7 +75,7 @@ def upload_photo():
     doc_ref.set(data)
 
     # Redirect to the home page.
-    return render_template('homepage.html', labels=labels, faces=faces, web_entities=web_entities, image_public_url=image_public_url)
+    return render_template('page.html', labels=labels, faces=faces, web_entities=web_entities, image_public_url=image_public_url)
 
 
 @app.errorhandler(500)
