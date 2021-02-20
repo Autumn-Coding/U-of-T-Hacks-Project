@@ -23,7 +23,7 @@ def homepage():
     # Return a Jinja2 HTML template.
     return render_template('homepage.html', photo_documents=photo_documents)
 
-@app.route('/upload_photo', methods=['GET', 'POST'])
+@app.route('/upload', methods=['GET', 'POST'])
 def upload_photo():
     # Create a Cloud Storage client.
     storage_client = storage.Client()
