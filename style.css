@@ -3,26 +3,47 @@ body {
     height: 2000px;
 }
 
+#topHeader {
+    height: 70px;
+    width: 100%;
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 #navigation {
     background: white;
-    position: fixed;
-    top: 0;
     left: 0;
     height: 50px;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-
-    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 2s; /* Firefox < 16 */
-        -ms-animation: fadein 2s; /* Internet Explorer */
-         -o-animation: fadein 2s; /* Opera < 12.1 */
-            animation: fadein 2s;
 }
 
 #emptyspace {
     height: 2000px;
+}
+
+
+.pleaseStay {
+    position: absolute;
+    top: 70px;
+}
+
+.scrollWithMe {
+    position: fixed;
+    top: 0px;
+}
+
+
+.animatedFade {
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+     -ms-animation: fadein 2s; /* Internet Explorer */
+      -o-animation: fadein 2s; /* Opera < 12.1 */
+         animation: fadein 2s;
 }
 
 
