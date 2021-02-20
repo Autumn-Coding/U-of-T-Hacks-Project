@@ -30,7 +30,7 @@ def upload_photo():
 
     # Get the Cloud Storage bucket that the file will be uploaded to.
     bucket = storage_client.get_bucket(os.environ.get('CLOUD_STORAGE_BUCKET'))
-
+    print("Posted file: {}".format(request.files['file']))
     # Create a new blob and upload the file's content to Cloud Storage.
     photo = request.files['file']
     blob = bucket.blob(photo.filename)
