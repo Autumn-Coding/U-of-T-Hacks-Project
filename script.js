@@ -1,5 +1,6 @@
 var navigation = document.getElementById("navigation");
 var topHeader = document.getElementById("topHeader");
+var uploadedImage = document.getElementById("uploadedImage");
 
 
 window.onscroll = function(){
@@ -11,3 +12,11 @@ window.onscroll = function(){
         navigation.classList.remove("scrollWithMe");
     }
 }
+
+
+function handleFileSelect(element) {
+    const thisImage = this.files[0];
+}
+
+
+uploadedImage.addEventListener("change", handleFileSelect, false);

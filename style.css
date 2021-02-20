@@ -23,6 +23,8 @@ body {
 }
 
 #emptyspace {
+    top: 200px;
+    position: absolute;
     height: 2000px;
 }
 
