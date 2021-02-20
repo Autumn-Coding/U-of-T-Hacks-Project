@@ -1,6 +1,5 @@
 body {
-    background: grey;
-    height: 2000px;
+    background-color: #ff9999;
 }
 
 #topHeader {
@@ -8,13 +7,11 @@ body {
     width: 100%;
     background: white;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0px;
 }
 
 #navigation {
     background: white;
-    left: 0;
     height: 50px;
     width: 100%;
 }
@@ -28,12 +25,35 @@ body {
     color: blue;
 }
 
-#emptyspace {
-    top: 200px;
-    position: absolute;
-    height: 2000px;
+#theProgram {
+    top: 800px;
 }
 
+#credits {
+    top: 1800px;
+}
+
+#About {
+    top: 100px;
+}
+
+
+
+.bodyHeader {
+    height: 100px;
+    width: 100%;
+    background-image : linear-gradient(to right,
+    rgba(255,255,255, 0), 
+    rgba(255,255,255, 1),
+    rgba(255,255,255, 0));
+}
+
+.bodyBox {
+    position: absolute;
+    padding-top: 80px;
+    height: 1000px;
+    width: 100%;
+}
 
 .topBar {
     display: flex;
@@ -41,6 +61,7 @@ body {
     justify-content: space-around;
     align-items: center;
     z-index: 10;
+    margin: 0;
 }
 
 .pleaseStay {
