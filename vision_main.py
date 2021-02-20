@@ -8,11 +8,14 @@ from google.cloud import storage
 from google.cloud import vision
 
 
-app = Flask(__name__)
+app = Flask(__name__,
+            static_url_path='',
+            static_folder='static',
+            template_folder='templates')
 
 
 @app.route('/')
-def homepage():
+def page():
     # Create a Cloud Firestore client.
     firestore_client = firestore.Client()
 
@@ -21,11 +24,12 @@ def homepage():
     photo_documents = list(firestore_client.collection(u'photos').get())
 
     # Return a Jinja2 HTML template.
-    return render_template('homepage.html', photo_documents=photo_documents)
+    return render_template('page.html', photo_documents=photo_documents)
 
-@app.route('/upload_photo', methods=['GET', 'POST'])
+@app.route('/upload', methods=['GET', 'POST'])
 def upload_photo():
     # Create a Cloud Storage client.
+    print("Posted file: {}".format(request.files['file']))
     storage_client = storage.Client()
 
     # Get the Cloud Storage bucket that the file will be uploaded to.
@@ -40,14 +44,14 @@ def upload_photo():
     # Make the blob publicly viewable.
     blob.make_public()
     image_public_url = blob.public_url
-    
+
     # Create a Cloud Vision client.
     vision_client = vision.ImageAnnotatorClient()
 
     # Retrieve a Vision API response for the photo stored in Cloud Storage
     image = vision.types.Image()
     image.source.image_uri = 'gs://{}/{}'.format(os.environ.get('CLOUD_STORAGE_BUCKET'), blob.name)
-    
+
     response = vision_client.annotate_image({'image': image})
     labels = response.label_annotations
     faces = response.face_annotations
@@ -74,7 +78,7 @@ def upload_photo():
     doc_ref.set(data)
 
     # Redirect to the home page.
-    return render_template('homepage.html', labels=labels, faces=faces, web_entities=web_entities, image_public_url=image_public_url)
+    return render_template('page.html', labels=labels, faces=faces, web_entities=web_entities, image_public_url=image_public_url)
 
 
 @app.errorhandler(500)
