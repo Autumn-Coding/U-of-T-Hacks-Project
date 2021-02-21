@@ -41,6 +41,11 @@ h1, #aboutText{
 }
 
 
+#aboutText {
+    font-size: 20px;
+}
+
+
 #addRoom {
     width: 100%;
     padding: 20px;

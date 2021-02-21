@@ -3,7 +3,7 @@ var topHeader = document.getElementById("topHeader");
 var uploadedImage = document.getElementById("uploadedImage");
 var submitRoom = document.getElementById("submitRoom");
 var customFileUpload = document.getElementById("custom-file-upload");
-var checkedRoomType = document.querySelector('input[name="roomType"]:checked')
+var addRoom = document.getElementById("addRoom");
 
 window.onscroll = function(){
     if(document.body.scrollTop > topHeader.clientHeight || document.documentElement.scrollTop > topHeader.clientHeight){
@@ -18,6 +18,10 @@ window.onscroll = function(){
 
 var formData = new FormData();
 
+function thisIsLoading() {
+    addRoom.innerHTML="<img src='upload.wikimedia.org/wikipedia/commons/9/92/Loading_icon_cropped.gif'>";
+}
+
 function collectImage() {
     customFileUpload.innerHTML = "Image uploaded";
     customFileUpload.classList.add('fileAddedDisplay');
@@ -26,16 +30,16 @@ function collectImage() {
 }
 
 function sendParameters() {
+    var checkedRoomType = document.querySelector('input[name="roomType"]:checked')
     if (checkedRoomType != null) {
         formData.set('roomtype', checkedRoomType.value);
-    } else {
-        alert('why')
     }
 
     if (formData.get('file') != undefined && formData.get('roomtype') != undefined) {
        let xhr = new XMLHttpRequest();
         xhr.open('POST', "http://localhost:8080/upload", true);
         xhr.send(formData);
+        thisIsLoading()
     } else if (formData.get('file') != undefined) {
         alert("no room type selected");
     } else if (formData.get('roomtype') != undefined) {
