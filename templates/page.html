@@ -3,27 +3,41 @@
 <head>
 
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="topHeader" class="topBar animatedFade"><h1>Make it Your Space</h1></div>
-<div id="navigation" class="topBar pleaseStay animatedFade">
+<div id="topHeader" class="contain animatedFade"><h1>Make it Your Space</h1></div>
+<div id="navigation" class="contain pleaseStay animatedFade">
     <a href="#About">About</a>
-    <a href="#theProgram">The Program</a>
-    <a href="#credits">Credits</a>
+    <a href="#Developers">Developers</a>
+    <a href="#theProgram">Program</a>
 </div>
 
-<div id="About" class="bodyBox">
-    <div class="bodyHeader topBar"><h1>About</h1></div>
+
+<div id="About" class="bodyBox contain">
+    <div class="bodyHeader contain"><h1>About</h1></div>
+    <div class="contentBox"></div>
 </div>
 
-<div id="theProgram" class="bodyBox">
-    <div class="bodyHeader topBar"><h1>The Program</h1></div>
-    <input type="file" id="uploadedImage" accept="image/*" />
-    <button id="submitFile">Submit File</button>
+<div id="Developers" class="bodyBox contain">
+    <div class="bodyHeader contain"><h1>Developers</h1></div>
+    <div class="contentBox"></div>
 </div>
-<div id="credits" class="bodyBox">
-    <div class="bodyHeader topBar"><h1>Credits</h1></div>
+
+<div id="theProgram" class="bodyBox contain">
+    <div class="bodyHeader contain"><h1>The Program</h1></div>
+    <div class="contentBox">
+        <div id="enterImageSpace" class="contain">
+            <label for="uploadedImage" class="custom-file-upload">
+                Upload Your Room Here
+            </label>
+            <input type="file" id="uploadedImage" accept="image/*" />
+            <button id="submitFile">Submit File</button>
+        </div>
+    </div>
 </div>
+
 <script src="script.js"></script>
 </body>
 </html>

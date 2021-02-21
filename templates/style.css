@@ -8,34 +8,31 @@ body {
     background: white;
     position: absolute;
     top: 0px;
+    font-family: 'Playfair Display', serif;
 }
 
 #navigation {
     background: white;
     height: 50px;
     width: 100%;
+    z-index: 10;
+    font-family: Arial;
 }
 
 #navigation a {
     text-decoration: none;
     font-weight: bold;
+    color: #349d7a;
 }
 
 #navigation a:hover {
-    color: blue;
+    color: mediumaquamarine;
 }
 
-#theProgram {
-    top: 800px;
+#enterImageSpace {
+
 }
 
-#credits {
-    top: 1800px;
-}
-
-#About {
-    top: 100px;
-}
 
 
 
@@ -46,22 +43,29 @@ body {
     rgba(255,255,255, 0),
     rgba(255,255,255, 1),
     rgba(255,255,255, 0));
+    font-family: 'Playfair Display', serif;
 }
 
 .bodyBox {
-    position: absolute;
-    padding-top: 80px;
+    position: relative;
     height: 1000px;
     width: 100%;
+    flex-direction: column;
+    margin-top: 150px;
 }
 
-.topBar {
+.contentBox {
+    height: 80%;
+    width: 80%;
+    background-image: linear-gradient(rgba(255,255,255, .8), rgba(255,255,255, .2) 90%);
+    padding: 20px;
+}
+
+.contain {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    z-index: 10;
-    margin: 0;
+    left: 0px;
 }
 
 .pleaseStay {
@@ -72,6 +76,17 @@ body {
 .scrollWithMe {
     position: fixed;
     top: 0px;
+}
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background: white;
 }
 
 
