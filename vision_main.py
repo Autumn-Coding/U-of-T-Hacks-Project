@@ -8,7 +8,10 @@ from google.cloud import storage
 from google.cloud import vision
 
 
-app = Flask(__name__)
+app = Flask(__name__,
+            static_url_path='',
+            static_folder='static',
+            template_folder='templates')
 
 
 @app.route('/')
@@ -41,14 +44,14 @@ def upload_photo():
     # Make the blob publicly viewable.
     blob.make_public()
     image_public_url = blob.public_url
-    
+
     # Create a Cloud Vision client.
     vision_client = vision.ImageAnnotatorClient()
 
     # Retrieve a Vision API response for the photo stored in Cloud Storage
     image = vision.types.Image()
     image.source.image_uri = 'gs://{}/{}'.format(os.environ.get('CLOUD_STORAGE_BUCKET'), blob.name)
-    
+
     response = vision_client.annotate_image({'image': image})
     labels = response.label_annotations
     faces = response.face_annotations

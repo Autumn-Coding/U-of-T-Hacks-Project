@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="topHeader" class="contain animatedFade"><h1>Make it Your Space</h1></div>
+<div id="navigation" class="contain pleaseStay animatedFade">
+    <a href="#">About</a>
+    <a href="#Developers">Developers</a>
+    <a href="#theProgram">Program</a>
+</div>
+
+
+<div id="About" class="bodyBox contain">
+    <div class="bodyHeader contain"><h1>About</h1></div>
+    <div class="contentBox">
+        <p id="aboutText">This is our project</p>
+    </div>
+</div>
+
+<div id="Developers" class="bodyBox contain">
+
+    <div class="bodyHeader contain"><h1>Developers</h1></div>
+
+    <div class="contentBox">
+        <div class="leftDeveloper">
+            <p class="nameTitle">Kate - Ideas, Frontend Designer</p>
+        </div>
+        <div class="rightDeveloper">
+            <p class="nameTitle">Backend Developer, Google Cloud API - Benson</p>
+        </div>
+        <div class="leftDeveloper">
+            <p class="nameTitle">Ahsan - Database</p>
+        </div>
+        <div class="rightDeveloper">
+            <p class="nameTitle">Misc. Support - Yu</>
+        </div>
+        <div class="leftDeveloper bigThanks">
+            <p class="nameTitle">~And a Very Big Thank You to the Amazing Mentors!~</p>
+        </div>
+    </div>
+
+</div>
+
+
+<div id="theProgram" class="bodyBox contain">
+
+    <div class="bodyHeader contain"><h1>The Program</h1></div>
+
+    <div class="contentBox">
+        <div id="addRoom" class="contain">
+            <div id="addRoomImage" class="contain">
+                <h1>Add Room Image</h1>
+                <label for="uploadedImage" id="custom-file-upload">
+                    Upload Your Room Here
+                </label>
+                <input type="file" id="uploadedImage" accept="image/*" />
+            </div>
+
+            <div id="addRoomType" class="contain">
+                <h1>Select Room Type</h1>
+                <div id="selectRoomType">
+
+                    <label class="checkRoom">Bedroom
+                        <input type="radio" name="roomType" id="roomBedroom" value="bedroom">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkRoom">Living Room
+                        <input type="radio" name="roomType" id="roomLiving" value="living">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkRoom">Dining Room
+                        <input type="radio" name="roomType" id="roomDining" value="dining">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkRoom">Kid's Room
+                        <input type="radio" name="roomType" id="roomKids" value="kids">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <button id="submitRoom">Submit Room</button>
+            </div>
+        </div>
+
+        <div id="results">
+            <h1>Recommendations</h1>
+            <hr>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
