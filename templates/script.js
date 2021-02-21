@@ -1,7 +1,7 @@
 var navigation = document.getElementById("navigation");
 var topHeader = document.getElementById("topHeader");
 var uploadedImage = document.getElementById("uploadedImage");
-var submitFile = document.getElementById("submitFile");
+var submitRoom = document.getElementById("submitRoom");
 
 
 window.onscroll = function(){
@@ -34,4 +34,4 @@ function sendImage() {
 }
 
 uploadedImage.addEventListener("change", collectThisImage, false);
-submitFile.addEventListener("click", sendImage)
+submitRoom.addEventListener("click", sendImage)

@@ -39,17 +39,31 @@
     <div class="bodyHeader contain"><h1>The Program</h1></div>
 
     <div class="contentBox">
-        <div id="enterImageSpace" class="contain">
+        <div id="addRoomTitles" class="contain">
+            <h1>Add Room Image</h1>
+            <h1>Select Room Type</h1>
+        </div>
+
+        <div id="addRoom" class="contain">
             <label for="uploadedImage" id="custom-file-upload">
                 Upload Your Room Here
             </label>
             <input type="file" id="uploadedImage" accept="image/*" />
-            <button id="submitFile">Submit File</button>
 
-            <div id="results">
-                <h1>Recommendations</h1>
-                <hr>
+            <div id="selectRoomType">
+                <input type="checkbox" id="roomBedroom" value="bedroom">
+                <label for="roomBedroom">Bedroom</label>
+                <input type="checkbox" id="roomLiving" value="living">
+                <label for="roomLiving">Living Room</label>
+                <input type="checkbox" id="roomDining" value="dining">
+                <label for="roomDining">Dining Room</label>
+                <button id="submitRoom">Submit Room</button>
             </div>
+        </div>
+
+        <div id="results">
+            <h1>Recommendations</h1>
+            <hr>
         </div>
 
     </div>
