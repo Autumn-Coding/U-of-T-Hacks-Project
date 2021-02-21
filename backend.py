@@ -1,3 +1,13 @@
+'''
+1. using the backend, once an image of an unfurnished room is received, I have written a function to compare it to pictures of furnished rooms, and pick which one it is the most simliar to
+
+2. once that is done, using the vision API the furniture in the picture can be determined
+
+3. and then specific products of that type of furniture can be recommended from amazon using the get_product function
+
+
+2. is incomplete currently and this backend still needs to be linked to the frontend
+'''
 import numpy as np 
 import cv2
 import os
