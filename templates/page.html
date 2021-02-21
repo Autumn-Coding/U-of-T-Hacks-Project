@@ -9,7 +9,7 @@
 <body>
 <div id="topHeader" class="contain animatedFade"><h1>Make it Your Space</h1></div>
 <div id="navigation" class="contain pleaseStay animatedFade">
-    <a href="#About">About</a>
+    <a href="#">About</a>
     <a href="#Developers">Developers</a>
     <a href="#theProgram">Program</a>
 </div>
@@ -21,21 +21,39 @@
 </div>
 
 <div id="Developers" class="bodyBox contain">
+
     <div class="bodyHeader contain"><h1>Developers</h1></div>
-    <div class="contentBox"></div>
+
+    <div class="contentBox">
+        <div class="leftDeveloper">Kate</div>
+        <div class="rightDeveloper">Benson</div>
+        <div class="leftDeveloper">Ahsan</div>
+        <div class="rightDeveloper">Yu</div>
+    </div>
+
 </div>
 
+
 <div id="theProgram" class="bodyBox contain">
+
     <div class="bodyHeader contain"><h1>The Program</h1></div>
+
     <div class="contentBox">
         <div id="enterImageSpace" class="contain">
-            <label for="uploadedImage" class="custom-file-upload">
+            <label for="uploadedImage" id="custom-file-upload">
                 Upload Your Room Here
             </label>
             <input type="file" id="uploadedImage" accept="image/*" />
             <button id="submitFile">Submit File</button>
+
+            <div id="results">
+                <h1>Recommendations</h1>
+                <hr>
+            </div>
         </div>
+
     </div>
+
 </div>
 
 <script src="script.js"></script>
