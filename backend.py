@@ -12,11 +12,13 @@ import numpy as np
 import cv2
 import os
 from requests_html import HTMLSession
+
 def mse(imageA, imageB):
     '''return the mean squared error of 2 images, the lower the error the more similar they are'''
     err = np.sum((imageA.astype("float") - imageB.astype("float")) ** 2)
     err /= float(imageA.shape[0] * imageA.shape[1])
     return err
+
 def most_similar_image(img, type):
     '''
     returns the most similar image to the inputted img which is the room of type type
@@ -51,6 +53,7 @@ def most_similar_image(img, type):
             similarities[location] = mse(input_img, comparing_img)
         return min(similarities, key=similarities.get)
 #print (most_similar_image('diningroomtest.jpg', 'dining room'))   #it works quite well!
+
 def get_product(query):
     '''returns the link for the best product for a certain query from amazon'''
     query = query.split()
