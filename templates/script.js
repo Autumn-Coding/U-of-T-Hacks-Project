@@ -26,8 +26,10 @@ function collectImage() {
 }
 
 function sendParameters() {
-    if (checkedRoomType != undefined) {
-        formData.set('roomtype', document.querySelector('input[name="roomType"]:checked').value);
+    if (checkedRoomType != null) {
+        formData.set('roomtype', checkedRoomType.value);
+    } else {
+        alert('why')
     }
 
     if (formData.get('file') != undefined && formData.get('roomtype') != undefined) {

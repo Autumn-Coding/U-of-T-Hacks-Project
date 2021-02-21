@@ -6,6 +6,10 @@ hr {
     width: 80%;
 }
 
+h1, #aboutText{
+    color: #115840;
+}
+
 
 #topHeader {
     height: 90px;
@@ -148,9 +152,10 @@ input[type="file"] {
     text-align:center;
     transition: all 0.4s;
     background: white;
+    outline: none;
 }
 
-#submitFile:hover{
+#submitRoom:hover{
     color:#000000;
     background-color: #deb9b9;
 }
@@ -160,11 +165,11 @@ input[type="file"] {
     background: white;
     border-radius: 20px 20px 0px 0px;
     width: 80%;
-    height: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
 
@@ -215,14 +220,37 @@ input[type="file"] {
 }
 
 .leftDeveloper, .rightDeveloper {
-    height: 100px;
-    width: 100%;
-    background: white;
+    width: 95%;
+    margin-top: 20px;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
 }
 
 .rightDeveloper {
-    display: flex;
-    justify-content: flex-end;
+    align-items: flex-end;
+    background-image : linear-gradient(to right,
+    rgba(255,255,255, 0),
+    rgba(255,255,255, 1) 30%);
+}
+
+.leftDeveloper {
+    background-image : linear-gradient(to left,
+    rgba(255,255,255, 0),
+    rgba(255,255,255, 1) 30%);
+}
+
+.bigThanks {
+    align-items: center;
+    justify-content: center;
+    background: white;
+    height: 15%;
+}
+
+.nameTitle {
+    font-size: 25px;
+    font-weight: 600;
+    font-family: "Playfair Display", Arial;
 }
 
 
