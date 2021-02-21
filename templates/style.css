@@ -6,7 +6,7 @@ hr {
     width: 80%;
 }
 
-h1, #aboutText{
+h1{
     color: #115840;
 }
 
@@ -41,8 +41,21 @@ h1, #aboutText{
 }
 
 
+#aboutBox {
+    text-align: center;
+}
+
 #aboutText {
     font-size: 20px;
+    color: #115840;
+    font-family: "Cabin";
+}
+
+#elevatorPitch {
+    font-size: 30px !important;
+    font-weight: bold;
+    font-family: "Varela Round";
+    color: #115840;
 }
 
 
