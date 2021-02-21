@@ -1,313 +1,105 @@
-body {
-    background-color: #ff9999;
-}
+<!DOCTYPE html>
+<html>
+<head>
 
-hr {
-    width: 80%;
-}
-
-h1{
-    color: #115840;
-}
-
-
-#topHeader {
-    height: 90px;
-    width: 100%;
-    background: white;
-    position: absolute;
-    top: 0px;
-    font-family: 'Playfair Display', serif;
-    text-shadow: 3px 3px 1px #cfcfcf;
-}
-
-#navigation {
-    background: white;
-    height: 50px;
-    width: 100%;
-    z-index: 10;
-    font-family: Arial;
-}
-
-#navigation a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #349d7a;
-    transition: all 0.2s;
-}
-
-#navigation a:hover {
-    color: mediumaquamarine;
-}
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="topHeader" class="contain animatedFade"><h1>Make it Your Space</h1></div>
+<div id="navigation" class="contain pleaseStay animatedFade">
+    <a href="#">About</a>
+    <a href="#Developers">Developers</a>
+    <a href="#theProgram">Program</a>
+</div>
 
 
-#aboutBox {
-    text-align: center;
-}
+<div id="About" class="bodyBox contain">
+    <div class="bodyHeader contain"><h1>About</h1></div>
+    <div class="contentBox">
+        <div id="aboutBox">
+            <p id="elevatorPitch">MakeItYour.Space is a website designed to allow anyone to easily customise any space, and make it their own.</p>
+            <p id="aboutText">Simply upload a picture of the room to be redisgned, along with what type of room it is, and receive a curated selection of recommended products to design your space the way you like it.</p>
+        </div>
+    </div>
+</div>
 
-#aboutText {
-    font-size: 20px;
-    color: #115840;
-    font-family: "Cabin";
-}
+<div id="Developers" class="bodyBox contain">
 
-#elevatorPitch {
-    font-size: 30px !important;
-    font-weight: bold;
-    font-family: "Varela Round";
-    color: #115840;
-}
+    <div class="bodyHeader contain"><h1>Developers</h1></div>
 
+    <div class="contentBox">
+        <div class="leftDeveloper">
+            <p class="nameTitle">Kate - Ideas, Frontend Designer, Writer</p>
+        </div>
+        <div class="rightDeveloper">
+            <p class="nameTitle">Backend Developer, Google Cloud API - Benson</p>
+        </div>
+        <div class="leftDeveloper">
+            <p class="nameTitle">Ahsan - Backend Developer</p>
+        </div>
+        <div class="rightDeveloper">
+            <p class="nameTitle">Presentation, Video Editing - Yu</>
+        </div>
+        <div class="leftDeveloper bigThanks">
+            <p class="nameTitle">~And a Very Big Thank You to the Amazing Mentors!~</p>
+        </div>
+    </div>
 
-#addRoom {
-    width: 100%;
-    padding: 20px;
-}
-
-#addRoomImage, #addRoomType {
-    flex-direction: column;
-    height: 100%;
-    justify-content: flex-start;
-}
-
-#addRoomImage {
-    width: 60%;
-}
-
-#addRoomType {
-    width: 30%;
-}
-
-input[type="file"] {
-    display: none;
-}
-#custom-file-upload {
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 6px 12px;
-    cursor: pointer;
-    background: white;
-    height: 300px;
-    width: 100%;
-    font-family: Arial;
-    box-shadow: inset 0 0 30px #e1d9e2;
-}
-
-.fileAddedDisplay {
-    background: #e3e3e3 !important;
-}
+</div>
 
 
-.checkRoom {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+<div id="theProgram" class="bodyBox contain">
 
-.checkRoom input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
+    <div class="bodyHeader contain"><h1>The Program</h1></div>
 
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #ae9b9b;
-  border-radius: 50%;
-}
+    <div class="contentBox">
+        <div id="addRoom" class="contain">
+            <div id="addRoomImage" class="contain">
+                <h1>Add Room Image</h1>
+                <label for="uploadedImage" id="custom-file-upload">
+                    Upload Your Room Here
+                </label>
+                <input type="file" id="uploadedImage" accept="image/*" />
+            </div>
 
-.checkRoom:hover input ~ .checkmark {
-  background-color: #9d6a6a;
-}
+            <div id="addRoomType" class="contain">
+                <h1>Select Room Type</h1>
+                <div id="selectRoomType">
 
-.checkRoom input:checked ~ .checkmark {
-  background-color: #6e3852;
-}
+                    <label class="checkRoom">Bedroom
+                        <input type="radio" name="roomType" id="roomBedroom" value="bedroom">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkRoom">Living Room
+                        <input type="radio" name="roomType" id="roomLiving" value="living">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkRoom">Dining Room
+                        <input type="radio" name="roomType" id="roomDining" value="dining">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="checkRoom">Kid's Room
+                        <input type="radio" name="roomType" id="roomKids" value="kids">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <button id="submitRoom">Submit Room</button>
+            </div>
+        </div>
 
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
+        <div id="results">
+            <h1>Recommendations</h1>
+            <hr>
+        </div>
 
-.checkRoom input:checked ~ .checkmark:after {
-  display: block;
-}
+    </div>
 
-.checkRoom .checkmark:after {
- 	top: 8px;
-	left: 9px;
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background: white;
-}
+</div>
 
-#submitRoom {
-    display:inline-block;
-    padding: 10px 50px;
-    border: none;
-    border-radius: 4px;
-    box-sizing: border-box;
-    text-decoration:none;
-    font-family:'Roboto',sans-serif;
-    font-weight:300;
-    color: black;
-    text-align:center;
-    transition: all 0.4s;
-    background: white;
-    outline: none;
-}
-
-#submitRoom:hover{
-    color:#000000;
-    background-color: #deb9b9;
-}
-
-
-#results {
-    background: white;
-    border-radius: 20px 20px 0px 0px;
-    width: 80%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-}
-
-
-
-.bodyHeader {
-    height: 100px;
-    width: 100%;
-    background-image : linear-gradient(to right,
-    rgba(255,255,255, 0),
-    rgba(255,255,255, 1),
-    rgba(255,255,255, 0));
-    font-family: 'Playfair Display', serif;
-}
-
-.bodyBox {
-    position: relative;
-    height: 1000px;
-    width: 100%;
-    flex-direction: column;
-    margin-top: 150px;
-}
-
-.contentBox {
-    height: 80%;
-    width: 80%;
-    background-image: linear-gradient(rgba(255,255,255, .8), rgba(255,255,255, .2) 90%);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.contain {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    left: 0px;
-}
-
-.pleaseStay {
-    position: absolute;
-    top: 90px;
-}
-
-.scrollWithMe {
-    position: fixed;
-    top: 0px;
-}
-
-.leftDeveloper, .rightDeveloper {
-    width: 95%;
-    margin-top: 20px;
-    display: flex;
-    padding: 20px;
-    flex-direction: column;
-}
-
-.rightDeveloper {
-    align-items: flex-end;
-    background-image : linear-gradient(to right,
-    rgba(255,255,255, 0),
-    rgba(255,255,255, 1) 30%);
-}
-
-.leftDeveloper {
-    background-image : linear-gradient(to left,
-    rgba(255,255,255, 0),
-    rgba(255,255,255, 1) 30%);
-}
-
-.bigThanks {
-    align-items: center;
-    justify-content: center;
-    background: white;
-    height: 15%;
-}
-
-.nameTitle {
-    font-size: 25px;
-    font-weight: 600;
-    font-family: "Playfair Display", Arial;
-}
-
-
-
-
-.animatedFade {
-    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: fadein 2s; /* Firefox < 16 */
-     -ms-animation: fadein 2s; /* Internet Explorer */
-      -o-animation: fadein 2s; /* Opera < 12.1 */
-         animation: fadein 2s;
-}
-
-
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Firefox < 16 */
-@-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Internet Explorer */
-@-ms-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Opera < 12.1 */
-@-o-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
+<script src="script.js"></script>
+</body>
+</html>
